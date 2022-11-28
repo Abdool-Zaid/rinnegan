@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="wrapper"><div class="target"></div></div>
+<style> 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+</style>
+<script>
+    function generateRandomColor() {
+  let letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+let i=18
+let limit=()=> document.querySelectorAll('.target').length -1
+let rinnegan = document.querySelectorAll('.target')[limit()]
+let eyeball = document.querySelectorAll('.target')
+let ring= document.querySelector(".target")
+let container= document.querySelector("#wrapper")
+let mainfunc=()=>{
+    eyeball.forEach((ring)=>{
+        console.log(i)
+        ring.style=`
+        border: 9px solid ${generateRandomColor()};
+        width:${i}px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        `
+        ring.innerHTML+=rinnegan.outerHTML
+        i=i+18
+})
+i=18
+setTimeout(function(){
+    mainfunc()}, 1000); //Time before execution
+}
+mainfunc()
+</script>
+</body>
+</html>
