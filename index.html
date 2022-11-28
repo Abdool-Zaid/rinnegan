@@ -7,12 +7,18 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="wrapper"><div class="target"></div></div>
+        <div  id="wrapper"><div class="target"></div></div>
     <style>
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+      #wrapper{
+        position: fixed;
+        left:50%;
+        top:50%;
+        transform: translate(-50%,-50%);
       }
     </style>
     <script>
@@ -45,13 +51,10 @@
           rinnegan.style = styleDiv();
           u = false;
         }
-eyeball()[limit()].innerHTML=eyeball()[limit()].outerHTML
-i=0
-eyeball()[limit()].style=styleDiv()
-
-  setTimeout(function () {
-          mainfunc();
-        }, 1000);
+    //    eyeball()[limit()]
+//   setTimeout(function () {
+//           mainfunc();
+//         }, 1000);
       };
       mainfunc();
     </script>
