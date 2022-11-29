@@ -34,7 +34,7 @@
       let styleDiv = () => {
         return `
         border: 9px solid ${generateRandomColor()};
-        width:${(i = i + 18)}px;
+        min-width:18px ;
         aspect-ratio: 1;
         border-radius: 50%;
         `;
@@ -51,10 +51,12 @@
           rinnegan.style = styleDiv();
           u = false;
         }
-    //    eyeball()[limit()]
-//   setTimeout(function () {
-//           mainfunc();
-//         }, 1000);
+        eyeball()[limit()].innerHTML=eyeball()[limit()].outerHTML
+i=0
+eyeball()[limit()].style=styleDiv()
+  setTimeout(function () {
+          mainfunc();
+        }, 1000/25);
       };
       mainfunc();
     </script>
