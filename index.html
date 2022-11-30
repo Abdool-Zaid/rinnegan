@@ -21,6 +21,7 @@
         top:50%;
         transform: translate(-50%,-50%);
       }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
     </style>
     <script>
@@ -34,12 +35,14 @@
         return color;
       }
       let i = 0;
+      let x=4
       let styleDiv = () => {
         return `
-        border: 9px solid ${generateRandomColor()};
+        border: 9px dashed ${generateRandomColor()};
         min-width:18px ;
         aspect-ratio: 1;
         border-radius: 50%;
+        animation:spin ${x=x+0.24}s linear infinite;
         `;
       };
       let u = true;
@@ -59,10 +62,16 @@ i=0
 eyeball()[limit()].style=styleDiv()
 if (limit()>24){
     container.firstChild.outerHTML=container.firstChild.innerHTML
+//     eyeball().forEach((ring)=>{
+// ring.style+=`
+// animation:spin 4s linear infinite;
+
+// `
+//     })
 }
 setTimeout(function () {
           mainfunc();
-        }, 1000/25);
+        }, 1000);
       };
       mainfunc();
     </script>
