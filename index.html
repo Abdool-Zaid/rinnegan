@@ -8,8 +8,8 @@
   </head>
   <body>
       <div  id="wrapper">
-      <div id="overlay"></div>
-        <div class="target"></div></div>
+        <div class="target"></div>
+      </div>
     <style>
       * {
         margin: 0;
@@ -61,10 +61,12 @@
         }
         eyeball()[limit()].innerHTML=eyeball()[limit()].outerHTML
 i=0
-eyeball()[limit()].style=styleDiv()
+eyeball()[limit()].style=styleDiv()  
+
 if (limit()>24){
-    container.firstChild.outerHTML=container.firstChild.innerHTML
-}
+    eyeball()[0].outerHTML=eyeball()[0].innerHTML
+console.log('active')
+  }
 setTimeout(function () {
           mainfunc();
         }, 1000);
