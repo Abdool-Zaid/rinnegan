@@ -24,6 +24,7 @@
         top: 50%;
         transform: translate(-50%, -50%);
       }
+
       #overlay {
         z-index: 2;
         background-image: url(https://raw.githubusercontent.com/Abdool-Zaid/rinnegan/main/assets/wrapper-overlay.webp);
@@ -48,15 +49,17 @@
       function generateRandomColor() {
         let letters = "0123456789ABCDEF";
         let color = "#";
-        for (let i = 0; i < 6; i++) {
+        for (let i = 0; i < 8; i++) {
           color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
       }
       let i = 0;
+      let y=true
       let x = 4;
       let styleDiv = () => {
         return `
+        background-color: rgba(0, 0, 0, 0.493);
         border: 9px dashed ${generateRandomColor()};
         min-width:18px ;
         aspect-ratio: 1;
@@ -66,6 +69,7 @@
       };
       let u = true;
       let limit = () => document.querySelectorAll(".target").length - 1;
+      let clinch=()=> limit()
       let rinnegan = document.querySelectorAll(".target")[limit()];
       let eyeball = () => document.querySelectorAll(".target");
       let container = document.querySelector("#wrapper");
@@ -76,18 +80,23 @@
           rinnegan.style = styleDiv();
           u = false;
         }
-        eyeball()[limit()].innerHTML = eyeball()[limit()].outerHTML;
+        if(y){
+          eyeball()[limit()].innerHTML = eyeball()[limit()].outerHTML;
+        }
         i = 0;
         eyeball()[limit()].style = styleDiv();
-        if (limit() > 24) {
+        if (clinch() > 24) {
+          if(limit()==1){
+            clinch=()=>  limit()
+          }else{
+            clinch=()=>42
+          }
           eyeball()[0].outerHTML = eyeball()[0].innerHTML;
-          eyeball()[0].outerHTML = eyeball()[0].innerHTML;
-
-          console.log("active");
+          y=!y
         }
         setTimeout(function () {
           mainfunc();
-        }, 1000);
+        }, 1000/4);
       };
       mainfunc();
     </script>
