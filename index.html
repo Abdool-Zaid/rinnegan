@@ -73,6 +73,7 @@
       let rinnegan = document.querySelectorAll(".target")[limit()];
       let eyeball = () => document.querySelectorAll(".target");
       let container = document.querySelector("#wrapper");
+      let overLay = document.querySelector("#overlay");
       let mainfunc = () => {
         if (u == true) {
           rinnegan.style = styleDiv();
@@ -80,6 +81,9 @@
           rinnegan.style = styleDiv();
           u = false;
         }
+overLay.style=`
+        transform: rotate(13deg);
+`
         if(y){
           eyeball()[limit()].innerHTML = eyeball()[limit()].outerHTML;
         }
@@ -96,7 +100,7 @@
         }
         setTimeout(function () {
           mainfunc();
-        }, 1000/4);
+        }, 1000/40);
       };
       mainfunc();
     </script>
